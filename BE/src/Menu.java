@@ -11,6 +11,10 @@ public class Menu {
     System.out.println("fjkfjfj");
     System.out.println("fjkfjfj");
     System.out.println("fjkfjfj");
+    System.out.println("fjkfjfj");
+    System.out.println("fjkfjfj");
+    System.out.println("fjkfjfj");
+    System.out.println("fjkfjfj");
 
   }
 }
