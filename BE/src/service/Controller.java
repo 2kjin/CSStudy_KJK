@@ -67,25 +67,30 @@ public class Controller {
         System.out.println("[ 상품 수정 ]");
         for(int i = 0; i < productNumber; i++){
             System.out.print("상품 번호 : ");
-            int num = sc.nextInt();
-            if (num == productNumber){
-                System.out.print("이름 변경 : ");
-                ProductList[productNumber][0] = sc.next();
-                System.out.print("가격 변경 : ");
-                ProductList[productNumber][1] = sc.next();
-                System.out.print("재고 변경 : ");
-                ProductList[productNumber][2] = sc.next();
+            int num = sc.nextInt() - 1;
+
+            for(int j = 0; j < ProductList.length; j++){
+                if (num == j){
+                    System.out.print("이름 변경 : ");
+                    ProductList[num][0] = sc.next();
+                    System.out.print("가격 변경 : ");
+                    ProductList[num][1] = sc.next();
+                    System.out.print("재고 변경 : ");
+                    ProductList[num][2] = sc.next();
+                }
             }
+            break;
         }
+
     }
 
     public void productDelete() {
         System.out.println("[ 상품 삭제 ]");
-        System.out.println("상품 번호 : ");
-        int num = sc.nextInt();
+        System.out.print("상품 번호 : ");
+        int num = sc.nextInt() - 1 ;
 
         if( num >= 0 && num < productNumber){
-            for(int i = num; i < productNumber -1 ; i++){
+            for(int i = num ; i < productNumber -1 ; i++){
                 ProductList[i][0] = ProductList[i + 1][0];
                 ProductList[i][1] = ProductList[i + 1][1];
                 ProductList[i][2] = ProductList[i + 1][2];
