@@ -17,6 +17,7 @@ public class Controller {
         System.out.println("no       name                     price         stock    ");
         System.out.println("---------------------------------------------------------");
         for (int i = 0; i < productNumber; i++) {
+            System.out.print(i+1 + "       ");
             for (int j = 0; j < ProductList[i].length; j++) {
                 System.out.print(ProductList[i][j] + "       ");
             }
