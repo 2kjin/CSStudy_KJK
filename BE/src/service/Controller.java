@@ -23,4 +23,38 @@ public class Controller {
         System.out.print("선택 : ");
     }
 
+    public void getMenu(int num){
+        switch (num){
+            case 1:
+                productCreate();
+                break;
+            case 2:
+                productUpdate();
+                break;
+            case 3:
+                productDelete();
+                break;
+            case 4:
+                exit();
+                break;
+            default:
+                System.out.println("없는 메뉴 입니다. 다시 입력해 주세요");
+                break;
+        }
+    }
+
+    public void productCreate() {
+    }
+
+    public void productUpdate() {
+    }
+
+    public void productDelete() {
+    }
+
+    public void exit(){
+        System.out.println("프로그램 종료");
+        System.exit(0);
+    }
+
 }

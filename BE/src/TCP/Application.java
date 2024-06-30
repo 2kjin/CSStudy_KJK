@@ -12,9 +12,9 @@ public class Application {
         Controller controller = new Controller();
 
         while (true){
-//            controller.showMenu();
+            controller.getProductList();
             int num = sc.nextInt();
-//            controller.choiceMenu(num);
+            controller.getMenu(num);
         }
     }
 }
