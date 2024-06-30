@@ -63,6 +63,19 @@ public class Controller {
     }
 
     public void productUpdate() {
+        System.out.println("[ 상품 수정 ]");
+        for(int i = 0; i < productNumber; i++){
+            System.out.print("상품 번호 : ");
+            int num = sc.nextInt();
+            if (num == productNumber){
+                System.out.print("이름 변경 : ");
+                ProductList[productNumber][0] = sc.next();
+                System.out.print("가격 변경 : ");
+                ProductList[productNumber][1] = sc.next();
+                System.out.print("재고 변경 : ");
+                ProductList[productNumber][2] = sc.next();
+            }
+        }
     }
 
     public void productDelete() {
