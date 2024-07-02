@@ -1,10 +1,10 @@
-package tcpip.project.client;
+package kyungmin.tcpip.project.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import tcpip.project.server.Item;
-import tcpip.project.server.ItemService;
+import kyungmin.tcpip.project.server.Item;
+import kyungmin.tcpip.project.server.ItemService;
 
 
 public class ItemController {

@@ -1,4 +1,4 @@
-package tcpip.project.client;
+package kyungmin.tcpip.project.client;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

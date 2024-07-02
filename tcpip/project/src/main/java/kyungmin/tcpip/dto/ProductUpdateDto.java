@@ -1,4 +1,4 @@
-package tcpip.dto;
+package kyungmin.tcpip.dto;
 
 public class ProductUpdateDto {
 
