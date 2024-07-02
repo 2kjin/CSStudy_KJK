@@ -13,6 +13,10 @@ public class Application {
 
         while (true){
             controller.getProductList();
+            while (!sc.hasNextInt()) {
+                System.out.println("없는 메뉴 입니다. 다시 입력해 주세요");
+                sc.next();
+            }
             int num = sc.nextInt();
             controller.getMenu(num);
         }
