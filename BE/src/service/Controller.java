@@ -1,7 +1,8 @@
 package service;
 
+import com.google.gson.Gson;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,6 +11,8 @@ public class Controller {
 
     Scanner sc = new Scanner(System.in);
     List<Map<String, Object>> ProductList = new ArrayList<>();
+
+    Gson gson = new Gson();
 
     public void getProductList(){
 
@@ -24,6 +27,8 @@ public class Controller {
             System.out.print(product.get("stock") + "    ");
             System.out.println();
             }
+        // json 형식으로 변환되는지 출력문
+        System.out.println(gson.toJson(ProductList));
         System.out.println("---------------------------------------------------------");
         System.out.println("메뉴 : 1. Create | 2. Update | 3. Delete | 4. Exit");
         System.out.print("선택 : ");
@@ -51,7 +56,7 @@ public class Controller {
 
     public void productCreate() {
         System.out.println("[ 상품 생성 ]");
-        Map<String, Object> product = new HashMap<>();
+        Map<String, Object> product = new LinkedHashMap<>();
         System.out.print("상품 이름 : ");
         product.put("name", sc.next());
         System.out.print("상품 가격 : ");
