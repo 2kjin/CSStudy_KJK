@@ -1,28 +1,29 @@
 package service;
 
-import domain.Product;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Controller {
 
     Scanner sc = new Scanner(System.in);
-    Product p = new Product();
-
-    String[][] ProductList = new String[100][3];
-    int productNumber = 0;
+    List<Map<String, Object>> ProductList = new ArrayList<>();
 
     public void getProductList(){
+
         System.out.println("---------------------------------------------------------");
         System.out.println("no       name                     price         stock    ");
         System.out.println("---------------------------------------------------------");
-        for (int i = 0; i < productNumber; i++) {
+        for (int i = 0; i < ProductList.size(); i++) {
             System.out.print(i+1 + "       ");
-            for (int j = 0; j < ProductList[i].length; j++) {
-                System.out.print(ProductList[i][j] + "       ");
-            }
+            Map<String, Object> product = ProductList.get(i);
+            System.out.print(product.get("name") + "                ");
+            System.out.print(product.get("price") + "         ");
+            System.out.print(product.get("stock") + "    ");
             System.out.println();
-        }
+            }
         System.out.println("---------------------------------------------------------");
         System.out.println("메뉴 : 1. Create | 2. Update | 3. Delete | 4. Exit");
         System.out.print("선택 : ");
@@ -50,60 +51,46 @@ public class Controller {
 
     public void productCreate() {
         System.out.println("[ 상품 생성 ]");
-        for(int i = 0; i < ProductList.length; i++){
-            if (productNumber == i){
-                System.out.print("상품 이름 : ");
-                ProductList[i][0] = sc.next();
-                System.out.print("상품 가격 : ");
-                ProductList[i][1] = sc.next();
-                System.out.print("상품 재고 : ");
-                ProductList[i][2] = sc.next();
-            }
-        }
-        productNumber++;
+        Map<String, Object> product = new HashMap<>();
+        System.out.print("상품 이름 : ");
+        product.put("name", sc.next());
+        System.out.print("상품 가격 : ");
+        product.put("price", sc.next());
+        System.out.print("상품 재고 : ");
+        product.put("stock", sc.next());
+
+        ProductList.add(product);
     }
 
     public void productUpdate() {
         System.out.println("[ 상품 수정 ]");
-        for(int i = 0; i < productNumber; i++){
-            System.out.print("상품 번호 : ");
-            int num = sc.nextInt() - 1;
+        System.out.print("상품 번호 : ");
+        int num = sc.nextInt() - 1;
 
-            for(int j = 0; j < ProductList.length; j++){
-                if (num == j){
-                    System.out.print("이름 변경 : ");
-                    ProductList[num][0] = sc.next();
-                    System.out.print("가격 변경 : ");
-                    ProductList[num][1] = sc.next();
-                    System.out.print("재고 변경 : ");
-                    ProductList[num][2] = sc.next();
-                }
-            }
-            break;
+        if (num >= 0 && num < ProductList.size()) {
+            Map<String, Object> product = ProductList.get(num);
+            System.out.print("이름 변경 : ");
+            product.put("name", sc.next());
+            System.out.print("가격 변경 : ");
+            product.put("price", sc.next());
+            System.out.print("재고 변경 : ");
+            product.put("stock", sc.next());
+        } else {
+            System.out.println("잘못된 상품 번호입니다. 다시 입력해 주세요.");
         }
-
     }
 
     public void productDelete() {
         System.out.println("[ 상품 삭제 ]");
         System.out.print("상품 번호 : ");
-        int num = sc.nextInt() - 1 ;
+        int num = sc.nextInt() - 1;
 
-        if( num >= 0 && num < productNumber){
-            for(int i = num ; i < productNumber -1 ; i++){
-                ProductList[i][0] = ProductList[i + 1][0];
-                ProductList[i][1] = ProductList[i + 1][1];
-                ProductList[i][2] = ProductList[i + 1][2];
-            }
-            ProductList[productNumber - 1][0] = null;
-            ProductList[productNumber - 1][1] = null;
-            ProductList[productNumber - 1][2] = null;
-            productNumber--;
+        if (num >= 0 && num < ProductList.size()) {
+            ProductList.remove(num);
             System.out.println("상품이 삭제되었습니다.");
         } else {
             System.out.println("잘못된 상품 번호입니다. 다시 입력해 주세요.");
         }
-
     }
 
     public void exit(){
