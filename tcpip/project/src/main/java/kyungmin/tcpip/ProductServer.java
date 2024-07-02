@@ -1,4 +1,4 @@
-package tcpip;
+package kyungmin.tcpip;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import kyungmin.tcpip.dto.ProductSaveDto;
 import org.springframework.scheduling.config.Task;
-import tcpip.dto.ProductSaveDto;
 
 public class ProductServer {
 
