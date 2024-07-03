@@ -30,7 +30,6 @@ public class ProductClient {
   public static void main(String[] args) throws IOException {
 
     while (true){
-      findProductsAndPrintMenu();
       int menuNum = Integer.parseInt(br.readLine());
       switch (menuNum){
         case 1:
