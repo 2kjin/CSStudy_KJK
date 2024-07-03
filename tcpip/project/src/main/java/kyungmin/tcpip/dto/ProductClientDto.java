@@ -1,6 +1,6 @@
 package kyungmin.tcpip.dto;
 
-public class ProductSaveDto {
+public class ProductClientDto {
 
   private int menuNum;
   private int no;
@@ -8,7 +8,10 @@ public class ProductSaveDto {
   private int price;
   private int stock;
 
-  public ProductSaveDto(int menuNum, int no, String name, int price, int stock) {
+  /**
+   * 저장 , 수정용 DTO 생성자
+   */
+  public ProductClientDto(int menuNum, int no, String name, int price, int stock) {
     this.menuNum = menuNum;
     this.no = no;
     this.name = name;
@@ -16,7 +19,14 @@ public class ProductSaveDto {
     this.stock = stock;
   }
 
-  public ProductSaveDto() {
+  /**
+   * 삭제용 DTO 생성자
+   */
+  public ProductClientDto(int menuNum , int no){
+    this.menuNum = menuNum;
+    this.no = no;
+  }
+  public ProductClientDto() {
   }
 
   public int getMenuNum() {

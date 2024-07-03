@@ -20,16 +20,16 @@ public class ItemController {
       int menuNum = Integer.parseInt(br.readLine());
       switch (menuNum){
         case 1:
-          requestSave();
-          continue;
+          doSave();
+          break;
 
         case 2:
-          requestUpdate();
-          continue;
+          doUpdate();
+          break;
 
         case 3:
-          requestDelete();
-          continue;
+          doDelete();
+          break;
         case 4:
           return;
       }
@@ -37,7 +37,7 @@ public class ItemController {
 
   }
 
-  private static void requestSave() throws IOException {
+  private static void doSave() throws IOException {
     System.out.println("[상품 생성]");
     System.out.print("상품 이름: ");
     String itemName = br.readLine();
@@ -49,7 +49,7 @@ public class ItemController {
     itemService.saveItem(item);
   }
 
-  private static void requestDelete() throws IOException {
+  private static void doDelete() throws IOException {
     System.out.print("상품 번호: ");
     long deleteId = Long.parseLong(br.readLine());
     try {
@@ -60,7 +60,7 @@ public class ItemController {
     }
   }
 
-  private static void requestUpdate() throws IOException {
+  private static void doUpdate() throws IOException {
       System.out.println("[상품 수정]");
       System.out.print("상품 번호: ");
       long updateId = Long.parseLong(br.readLine());

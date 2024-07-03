@@ -13,4 +13,9 @@ public class Product {
   private int price;
   private int stock;
 
+  @Override
+  public String toString() {
+    //System.out.println("no\t\tname\t\t\t\t\t\t\t\tprice\t\t\t\tstock");
+    return getNo() + "\t\t" + getName() + "\t\t\t\t\t\t\t\t" + getPrice() + "\t\t\t" + getStock();
+  }
 }
