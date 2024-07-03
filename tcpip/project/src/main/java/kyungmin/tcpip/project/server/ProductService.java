@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 public class ProductService {
-  private final ObjectMapper objectMapper = new ObjectMapper();
+  private final ObjectMapper objectMapper = ProductClient.objectMapper;
   private final ProductRepository productRepository = new ProductRepository();
 
   private final ProductClient productClient = new ProductClient();
@@ -28,6 +28,7 @@ public class ProductService {
    */
   public void saveProduct(String saveJson) throws JsonProcessingException {
     try {
+
       ProductClientDto productClientDto = objectMapper.readValue(saveJson, ProductClientDto.class); //DTO는 메뉴 넘버 포함 , 엔티티는 미포함
       Product saveProduct = new Product(productClientDto.getNo(), productClientDto.getName(), productClientDto.getPrice(), productClientDto.getStock());
       productRepository.save(saveProduct);

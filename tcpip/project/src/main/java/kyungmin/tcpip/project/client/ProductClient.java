@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import kyungmin.tcpip.project.ObjectMapperSingleton;
 import kyungmin.tcpip.project.server.ProductRepository;
 import kyungmin.tcpip.project.server.ProductService;
 import kyungmin.tcpip.project.domain.Product;
@@ -15,11 +16,8 @@ import org.springframework.stereotype.Component;
 
 public class ProductClient {
 
-  private static final ObjectMapper objectMapper = new ObjectMapper();
 
-  public static ObjectMapper getInstance(){
-    return objectMapper;
-  }
+  public static final ObjectMapper objectMapper = new ObjectMapper();
 
   private static final ProductService productService = new ProductService();
 
@@ -28,6 +26,7 @@ public class ProductClient {
   private static int sequence = 0;
 
   public static void main(String[] args) throws IOException {
+
     int a=0;
     while (true){
       if (a++==0) {

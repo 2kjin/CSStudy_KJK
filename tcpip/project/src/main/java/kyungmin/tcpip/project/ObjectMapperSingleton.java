@@ -9,5 +9,7 @@ public class ObjectMapperSingleton {
     return objectMapper;
   }
 
+  private ObjectMapperSingleton(){}
+
 
 }
