@@ -97,6 +97,7 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kyungmin.tcpip.project.*" />
+
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
