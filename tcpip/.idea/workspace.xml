@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="882d9811-24bc-4c77-934c-b2e6d2fb6266" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules/project.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/project.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/jeongu/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/jeongu/ProductClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/jeongu/ProductServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/ProductClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/ProductServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/dto/ProductSaveDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/dto/ProductUpdateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/ProjectApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ASD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ServletPractice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/ItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/test/java/tcpip/project/ProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/BE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/CSStudy_KJK.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/TCP/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/domain/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/exception/ExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/server/clientSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/server/serverSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/service/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/service/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/view/InputView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/view/OutputView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BE/src/view/View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSStudyKJK.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tcpip.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/project">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2igZKMx3Dcjjhg4y4mvnqkKGjW9" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.project [:Application.main()].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging be-feature/kjin",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/study/TCPIP과제/tcpip"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TCP.Application" />
+      <module name="project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TCP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="882d9811-24bc-4c77-934c-b2e6d2fb6266" name="Changes" comment="" />
+      <created>1719914115949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719914115949</updated>
+    </task>
+    <servers />
+  </component>
+</project>
