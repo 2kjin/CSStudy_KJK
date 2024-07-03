@@ -5,14 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import kyungmin.tcpip.project.ObjectMapperSingleton;
-import kyungmin.tcpip.project.server.ProductRepository;
 import kyungmin.tcpip.project.server.ProductService;
 import kyungmin.tcpip.project.domain.Product;
 import kyungmin.tcpip.project.dto.ProductClientDto;
 import kyungmin.tcpip.project.dto.ProductServerDto;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 public class ProductClient {
 
