@@ -12,11 +12,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class ProductService {
-  private final ObjectMapper objectMapper;
+  private final ObjectMapper objectMapper = new ObjectMapper();
+  private final ProductRepository productRepository = new ProductRepository();
 
-  private final ProductRepository productRepository;
+  private final ProductClient productClient = new ProductClient();
   //LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(100);
 
 
@@ -36,13 +36,14 @@ public class ProductService {
     }catch (Exception e){
       returnResultToClient("fail");
     }
-
   }
+
+
   /**
    * 단 건 조회
    */
   public Product findOne(int no) {
-      return productRepository.findByNo(no).orElseThrow(()->new NoProductException("요청한 no 번호는 찾을 수 없습니다"));
+    return productRepository.findByNo(no).orElseThrow(()->new NoProductException("요청한 no 번호는 찾을 수 없습니다"));
   }
 
 
@@ -51,21 +52,24 @@ public class ProductService {
    */
   public void updateProduct(String updateJson) throws JsonProcessingException {
     try {
-      Product findProduct = getProduct(updateJson);
-      productRepository.update(findProduct);
+      ProductClientDto productDto = objectMapper.readValue(updateJson, ProductClientDto.class);
+      Product findProduct = findOne(productDto.getNo());
+      findProduct.setName(productDto.getName());
+      findProduct.setPrice(productDto.getPrice());
+      findProduct.setStock(productDto.getStock());
       returnResultToClient("success");
     }catch (Exception e){
       returnResultToClient("fail");
     }
   }
 
-
   /**
    * 삭제
    */
   public void deleteProduct(String deleteJson) throws JsonProcessingException {
     try {
-      Product findProduct = getProduct(deleteJson);
+      ProductClientDto productDto = objectMapper.readValue(deleteJson, ProductClientDto.class);
+      Product findProduct = findOne(productDto.getNo());
       productRepository.delete(findProduct);
       returnResultToClient("success");
     }catch (Exception e){
@@ -73,15 +77,12 @@ public class ProductService {
     }
   }
 
-  private Product getProduct(String deleteJson) throws JsonProcessingException {
-    ProductClientDto deleteDto = objectMapper.readValue(deleteJson, ProductClientDto.class);
-    return findOne(deleteDto.getNo());
-  }
 
-  public void returnResultToClient(String success) throws JsonProcessingException {
-    ProductServerDto productServerDto = new ProductServerDto(success, (Product[]) findProducts().toArray());
+
+  public void returnResultToClient(String status) throws JsonProcessingException {
+    ProductServerDto productServerDto = new ProductServerDto(status, findProducts().toArray(new Product[0]));
     String successSaveJson = objectMapper.writeValueAsString(productServerDto);
-    ProductClient.findProductsAndPrintMenu(successSaveJson);
+    productClient.findProductsAndPrintMenu(successSaveJson);
 
   }
   /**
@@ -90,5 +91,7 @@ public class ProductService {
   public List<Product> findProducts() {
     return productRepository.findAll();
   }
-  
+
+
+
 }

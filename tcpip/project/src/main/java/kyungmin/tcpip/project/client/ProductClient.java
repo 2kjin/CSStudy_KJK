@@ -10,7 +10,6 @@ import kyungmin.tcpip.project.server.ProductService;
 import kyungmin.tcpip.project.domain.Product;
 import kyungmin.tcpip.project.dto.ProductClientDto;
 import kyungmin.tcpip.project.dto.ProductServerDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,15 +18,23 @@ public class ProductClient {
   private static final ObjectMapper objectMapper = new ObjectMapper();
 
 
-  private static final ProductService productService = new ProductService(objectMapper , new ProductRepository());
+  private static final ProductService productService = new ProductService();
 
   private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
   private static int sequence = 0;
 
   public static void main(String[] args) throws IOException {
-
+    int a=0;
     while (true){
+      if (a++==0) {
+        System.out.println("-".repeat(50));
+        System.out.println("no\t\tname\t\t\t\t\t\t\t\tprice\t\t\t\tstock");
+        System.out.println("-".repeat(50));
+        System.out.println("-".repeat(50));
+        System.out.println("메뉴: 1. Create | 2. Update | 3.Delete | 4.Exit");
+        System.out.print("선택 : ");
+      }
       int menuNum = Integer.parseInt(br.readLine());
       switch (menuNum){
         case 1:
@@ -92,7 +99,7 @@ public class ProductClient {
   /**
    * 서버 => 클라이언트
    */
-  public static void findProductsAndPrintMenu(String json) throws JsonProcessingException {
+  public void findProductsAndPrintMenu(String json) throws JsonProcessingException {
     ProductServerDto productServerDto = objectMapper.readValue(json, ProductServerDto.class);
     String status = productServerDto.getStatus();
     Product[] products = productServerDto.getProducts();
@@ -108,6 +115,7 @@ public class ProductClient {
       System.out.println("-".repeat(50));
       System.out.println("메뉴: 1. Create | 2. Update | 3.Delete | 4.Exit");
       System.out.print("선택 : ");
+
     }
     else{
       System.out.println("=".repeat(20)+"Warning!!!!"+"=".repeat(20));

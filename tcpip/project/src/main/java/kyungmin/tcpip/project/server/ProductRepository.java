@@ -17,27 +17,19 @@ public class ProductRepository {
     store.add(product);
   }
 
-  //R
+  //R\
   public Optional<Product> findByNo(int no){
-    return Optional.ofNullable(store.get(no));
+    return Optional.ofNullable(store.get(no-1));
   }
 
   public List<Product> findAll(){
     return store;
   }
 
-  //U
-  public void update(Product updateProduct){
-    Product findProduct = findByNo(updateProduct.getNo()).orElseThrow(()->new NoProductException("요청한 no 번호는 찾을 수 없습니다"));
-    findProduct.setName(updateProduct.getName());
-    findProduct.setPrice(updateProduct.getPrice());
-    findProduct.setStock(updateProduct.getStock());
-  }
 
   //D
-  public void delete(Product deleteProduct){
-    Product findProduct = findByNo(deleteProduct.getNo()).orElseThrow(() -> new NoProductException("요청한 no 번호는 찾을 수 없습니다"));
-    store.remove(findProduct);
+  public void delete(Product product){
+    store.remove(product);
   }
 
 }
