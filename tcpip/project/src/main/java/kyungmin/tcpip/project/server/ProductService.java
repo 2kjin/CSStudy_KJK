@@ -11,7 +11,6 @@ import kyungmin.tcpip.project.exception.NoProductException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 public class ProductService {
   private final ObjectMapper objectMapper = new ObjectMapper();
   private final ProductRepository productRepository = new ProductRepository();

@@ -10,13 +10,16 @@ import kyungmin.tcpip.project.server.ProductService;
 import kyungmin.tcpip.project.domain.Product;
 import kyungmin.tcpip.project.dto.ProductClientDto;
 import kyungmin.tcpip.project.dto.ProductServerDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@Component
 public class ProductClient {
 
   private static final ObjectMapper objectMapper = new ObjectMapper();
 
+  public static ObjectMapper getInstance(){
+    return objectMapper;
+  }
 
   private static final ProductService productService = new ProductService();
 

@@ -7,7 +7,6 @@ import kyungmin.tcpip.project.domain.Product;
 import kyungmin.tcpip.project.exception.NoProductException;
 import org.springframework.stereotype.Repository;
 
-@Repository
 public class ProductRepository {
 
   private static final List<Product> store = new ArrayList<>();
