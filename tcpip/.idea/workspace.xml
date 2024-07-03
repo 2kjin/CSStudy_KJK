@@ -110,7 +110,7 @@
     "last_opened_file_path": "C:/study/TCPIP과제/tcpip"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.kjin.TCP.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TCP.Application" />
       <module name="project.main" />
@@ -124,8 +124,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="kjin.TCP.Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kjin.TCP.Application" />
+      <module name="project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kjin.TCP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.kjin.TCP.Application" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
