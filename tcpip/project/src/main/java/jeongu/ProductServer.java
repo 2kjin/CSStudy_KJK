@@ -1,34 +1,67 @@
 package jeongu;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.BufferedReader;
 import java.io.DataInputStream;
-import java.io.DataOutput;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
+import lombok.Data;
 
 public class ProductServer {
-  static ArrayList productList = new ArrayList();
+  static int productNumber = 0;
+  static ArrayList<Product> productList = new ArrayList();
 
   public static void main(String[] args) {
     ServerSocket serverSocket = null;
     Socket socket = null;
+    ObjectMapper mapper = new ObjectMapper();
+    String status = "success";
 
     try {
       serverSocket = new ServerSocket(8080);
+      socket = serverSocket.accept();
       while (true) {
-        System.out.println("연결을 기다리는 중...");
+        System.out.println("요청을 기다리는 중...");
 
-        socket = serverSocket.accept();
+        // 클라이언트에게 리스트 보내기
+        PrintWriter pw = new PrintWriter(socket.getOutputStream());
 
-        Sender sender = new Sender(socket);
-        Receiver receiver = new Receiver(socket);
+        Response response = new Response(status, productList);
+        String responseJson = mapper.writeValueAsString(response);
 
-        sender.start();
-        receiver.start();
+        pw.println(responseJson);
+        pw.flush();
+
+        // 클라이언트 요청 확인
+        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String requestJson = br.readLine();
+
+        Request request = mapper.readValue(requestJson, Request.class);
+
+        int selectedMenu = request.getMenu();
+        Product receivedProduct = request.getData();
+
+        if (selectedMenu == 1){
+          saveProduct(receivedProduct);
+        } else if (selectedMenu == 2) {
+          updateProduct(receivedProduct);
+        } else if (selectedMenu == 3) {
+          deleteProduct(receivedProduct);
+        } else if (selectedMenu == 4) {
+          System.out.println("클라이언트가 연결을 끊었습니다.");
+          continue;
+        } else {
+          continue;
+        }
+
+        System.out.println(productList);
+
       }
 
 
@@ -37,49 +70,36 @@ public class ProductServer {
     }
   }
 
+
 //  class SocketClient {
 //
 //  }
-}
-
-class Sender extends Thread {
-  Socket socket;
-  DataOutputStream out;
-  String name;
-  Sender(Socket socket) {
-    this.socket = socket;
-    try {
-      out = new DataOutputStream(socket.getOutputStream());
-      name = "[" + socket.getInetAddress() + ":" + socket.getPort()+"]";
-    } catch (Exception e) {}
+  private static void saveProduct(Product product) {
+    productNumber++;
+    product.setNo(productNumber);
+    productList.add(product);
   }
 
-  public void run() {
-    Scanner scanner = new Scanner(System.in);
-    while (out != null) {
-      try {
-        out.writeUTF(name+scanner.nextLine());
-      } catch (IOException e) {}
+  private static void updateProduct(Product product) {
+    for (Product target : productList) {
+      if (target.getNo() == product.getNo()) {
+        target.setName(product.getName());
+        target.setPrice(product.getPrice());
+        target.setStock(product.getStock());
+      }
     }
   }
-}
 
-class Receiver extends Thread {
-  Socket socket;
-  DataInputStream in;
-
-  Receiver(Socket socket) {
-    this.socket = socket;
-    try {
-      in = new DataInputStream(socket.getInputStream());
-    } catch (IOException e) {}
-  }
-
-  public void run() {
-    while (in != null) {
-      try {
-        System.out.println(in.readUTF());
-      } catch (IOException e) {}
+  private static void deleteProduct(Product product) {
+    for (Product target : productList) {
+      if (target.getNo() == product.getNo()) {
+        productList.remove(target);
+        break;
+      }
     }
   }
+
+
 }
+
+
