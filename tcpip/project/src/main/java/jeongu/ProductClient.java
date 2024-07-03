@@ -1,57 +1,77 @@
 package jeongu;
 
-//import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Scanner;
+import lombok.Data;
 
 public class ProductClient {
 
   static Scanner scanner = new Scanner(System.in);
   static final private String serverIp = "127.0.0.1";
+  static Socket socket = null;
+  static ObjectMapper mapper = new ObjectMapper();
 
   public static void main(String[] args) {
 
-//    ObjectMapper mapper = null;
     BufferedReader br = null;
     PrintWriter pw = null;
-    Socket socket = null;
-
     boolean quit = false;
+
     try {
       // 서버 연결
       socket = new Socket(serverIp, 8080);
 
       System.out.println("서버에 연결되었습니다.");
-      System.out.println("[클라이언트의 채팅창]");
 
       while (!quit) {
-        productList();
+
+        br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String responseJson = br.readLine();
+
+        Response response = mapper.readValue(responseJson, Response.class);
+
+        String status = response.getStatus();
+        if (status.equals("fail")) {
+          System.out.println("잘못된 데이터를 받아왔습니다.");
+        }
+        ArrayList<Product> arrayList = response.getData();
+
+        productList(arrayList);
         showMenu();
 
         Product product = new Product();
 
         int menu = scanner.nextInt();
-        switch (menu) {
-          case 1 -> product = createMenu();
-          case 2 -> product = updateMenu();
-          case 3 -> product = deleteMenu();
-          case 4 -> quit = true;
-          default -> System.out.println("잘못된 선택입니다.");
+
+        if (menu == 1){
+          product = createMenu();
+        } else if (menu == 2) {
+          product = updateMenu();
+        } else if (menu == 3) {
+          product = deleteMenu();
+        } else if (menu == 4) {
+          quit = true;
+        } else {
+          System.out.println("잘못된 선택입니다.");
+          continue;
         }
 
-//        mapper = new ObjectMapper();
-//        br = new BufferedReader(new InputStreamReader(System.in));
-//        pw = new PrintWriter(socket.getOutputStream());
+        pw = new PrintWriter(socket.getOutputStream());
 
         Request request = new Request(menu, product);
-//        String requestJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(request);
-//        System.out.println(requestJson);
+        String requestJson = mapper.writeValueAsString(request);
+
+        pw.println(requestJson);
+        pw.flush();
 
       }
 
@@ -63,41 +83,24 @@ public class ProductClient {
         if (socket != null) {
           socket.close();
         }
-        if (br != null) {
-          br.close();
-        }
-        if (pw != null) {
-          pw.close();
-        }
       } catch (IOException e) {
         System.out.println(e);
       }
     }
 
-
   }
 
-  private static class Request{
-    private int menu;
-    private Product product;
+//  @Data
+//  private static class Request{
+//    private int menu;
+//    private Product data;
+//
+//    public Request(int menu, Product data) {
+//      this.menu = menu;
+//      this.data = data;
+//    }
+//  }
 
-    public Request(int menu, Product data) {
-      this.menu = menu;
-      this.product = data;
-    }
-
-    @Override
-    public String toString() {
-      return "{" +
-          "menu:" + menu +
-          ", data:" + product.toString() +
-          '}';
-    }
-  }
-
-  private static class Response{
-    private String status;
-  }
 
   private static Product createMenu() {
     Product product = new Product();
@@ -135,10 +138,15 @@ public class ProductClient {
   }
 
 
-  private static void productList() {
+  private static void productList(ArrayList<Product> products) {
     System.out.println("------------------------------------------");
     System.out.println("no\t\tname\t\t\t\t\t\t\tprice\t\t\tstock");
     System.out.println("------------------------------------------");
+    for (Product product : products) {
+      System.out.println(
+          product.getNo() + "\t\t" + product.getName() + "\t\t\t\t\t\t\t" + product.getPrice()
+              + "\t\t\t" + product.getStock());
+    }
     System.out.println("------------------------------------------");
   }
 

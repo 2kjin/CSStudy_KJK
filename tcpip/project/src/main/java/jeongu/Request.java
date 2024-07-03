@@ -5,12 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-  private int no;
-  private String name;
-  private int price;
-  private int stock;
+@NoArgsConstructor
+class Request{
+  private int menu;
+  private Product data;
 
 }
