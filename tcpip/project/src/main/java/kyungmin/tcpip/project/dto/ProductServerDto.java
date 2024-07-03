@@ -1,7 +1,10 @@
-package kyungmin.tcpip.dto;
+package kyungmin.tcpip.project.dto;
 
-import kyungmin.tcpip.Product;
+import kyungmin.tcpip.project.domain.Product;
 
+/**
+ * 서버 => 클라이언트 DTO
+ */
 public class ProductServerDto {
   String status;
   Product[] products;

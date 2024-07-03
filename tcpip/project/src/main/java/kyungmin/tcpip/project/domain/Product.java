@@ -1,4 +1,4 @@
-package kyungmin.tcpip;
+package kyungmin.tcpip.project.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

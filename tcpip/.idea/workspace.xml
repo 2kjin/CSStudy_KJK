@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882d9811-24bc-4c77-934c-b2e6d2fb6266" name="Changes" comment="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#   💫 chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#   💡 refactor          : 코드 리펙토링&#10;#   🎨 style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#   💄 design            : CSS/UI 변경 내용&#10;#   📝 docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#   🔥 remove             : 삭제&#10;#   🚧 in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#   🚑 HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
+    <list default="true" id="882d9811-24bc-4c77-934c-b2e6d2fb6266" name="Changes" comment="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#   💫 가chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#   💡 refactor          : 코드 리펙토링&#10;#   🎨 style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#   💄 design            : CSS/UI 변경 내용&#10;#   📝 docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#   🔥 remove             : 삭제&#10;#   🚧 in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#   🚑 HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/ProductClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ProductClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/ProductServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/dto/ProductClientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/dto/ProductClientDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/dto/ProductServerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/dto/ProductServerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ASD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/client/ServletPractice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/ItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/kyungmin/tcpip/project/server/ItemService.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,12 +36,27 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,6 +73,7 @@
     "Gradle.project [:ProductClient.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "be-feature/kyungmin",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lee/CSStudy_KJK/tcpip/project/src/main/java/kyungmin"
@@ -57,11 +89,11 @@
   </component>
   <component name="RunManager">
     <configuration name="ProductClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="kyungmin.tcpip.ProductClient" />
+      <option name="MAIN_CLASS_NAME" value="kyungmin.tcpip.project.client.ProductClient" />
       <module name="project.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="kyungmin.tcpip.*" />
+          <option name="PATTERN" value="kyungmin.tcpip.project.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,10 +116,22 @@
       <option name="presentableId" value="Default" />
       <updated>1719914115949</updated>
     </task>
+    <task id="LOCAL-00001" summary="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;✨ feat : 상품 등록 , 수정 , 삭제 조회 기능 추가&#10;# --- COMMIT TYPE ---  &#10;#   💫 chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#   💡 refactor          : 코드 리펙토링&#10;#   🎨 style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#   💄 design            : CSS/UI 변경 내용&#10;#   📝 docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#   🔥 remove             : 삭제&#10;#   🚧 in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#   🚑 HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치">
+      <option name="closed" value="true" />
+      <created>1719992193878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719992193878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#    chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#    refactor          : 코드 리펙토링&#10;#    style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#    design            : CSS/UI 변경 내용&#10;#    docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#    remove             : 삭제&#10;#    in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#    HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
-    <option name="LAST_COMMIT_MESSAGE" value="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#    chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#    refactor          : 코드 리펙토링&#10;#    style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#    design            : CSS/UI 변경 내용&#10;#    docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#    remove             : 삭제&#10;#    in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#    HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
+    <MESSAGE value="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#    chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#    refactor          : 코드 리펙토링&#10;#    style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#    design            : CSS/UI 변경 내용&#10;#    docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#    remove             : 삭제&#10;#    in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#    HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
+    <MESSAGE value="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;✨ feat : 상품 등록 , 수정 , 삭제 조회 기능 추가&#10;# --- COMMIT TYPE ---  &#10;#    chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#    refactor          : 코드 리펙토링&#10;#    style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#    design            : CSS/UI 변경 내용&#10;#    docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#    remove             : 삭제&#10;#    in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#    HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
+    <MESSAGE value="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#    가chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#    refactor          : 코드 리펙토링&#10;#    style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#    design            : CSS/UI 변경 내용&#10;#    docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#    remove             : 삭제&#10;#    in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#    HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
+    <option name="LAST_COMMIT_MESSAGE" value="# 제목은 최대 50글자까지 아래에 &quot;한국어&quot;로 작성: ex) ⛏ fix: 로그인 API auth 수정&#10;&#10;# --- COMMIT TYPE ---  &#10;#    가chore             : 프로젝트 초기 구성등 기타사항.&#10;#   ✨ feat              : 새로운 기능&#10;#   ⛏ fix               : 버그 수정&#10;#    refactor          : 코드 리펙토링&#10;#    style             : 스타일 (코드 포맷팅, 세미콜론 등 비즈니스 로직에 영향 없는 변경 사항)&#10;#    design            : CSS/UI 변경 내용&#10;#    docs              : 문서 (문서 추가, 수정, 삭제)&#10;#   ✅ test              : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)&#10;#   ⚡ update            : 전반적인 수정사항&#10;#    remove             : 삭제&#10;#    in progress       : 아직 완성하지는 못했지만 진행중인 부분을 커밋해야할 경우&#10;#    HOTFIX            : 급하게 치명적인 버그를 고쳐야 하는 경우&#10;#   ➕ add dependency    : dependency 추가&#10;#   ✏ typo fix          : 오탈자 수정&#10;&#10;# -------COMMIT LOGIC-----------  &#10;# 1. (fe-develop) $ git fetch&#10;# 2. (fe-develop) $ git checkout -b fe-feature/user-login-layout --track origin/fe-develop&#10;# 3. DO commit!&#10;# 4. (fe-feature/브랜치) $ git pull --rebase origin fe-develop&#10;# 5. (fe-feature/user-login-layout) $ git push origin fe-feature/브랜치" />
   </component>
 </project>

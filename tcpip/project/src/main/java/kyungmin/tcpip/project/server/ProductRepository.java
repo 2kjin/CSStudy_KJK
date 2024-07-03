@@ -1,8 +1,9 @@
-package kyungmin.tcpip;
+package kyungmin.tcpip.project.server;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import kyungmin.tcpip.project.domain.Product;
 import kyungmin.tcpip.project.exception.NoProductException;
 import kyungmin.tcpip.project.server.Item;
 import org.springframework.stereotype.Repository;

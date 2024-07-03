@@ -1,13 +1,14 @@
-package kyungmin.tcpip;
+package kyungmin.tcpip.project.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import kyungmin.tcpip.dto.ProductClientDto;
-import kyungmin.tcpip.dto.ProductServerDto;
-import lombok.RequiredArgsConstructor;
+import kyungmin.tcpip.project.server.ProductService;
+import kyungmin.tcpip.project.domain.Product;
+import kyungmin.tcpip.project.dto.ProductClientDto;
+import kyungmin.tcpip.project.dto.ProductServerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

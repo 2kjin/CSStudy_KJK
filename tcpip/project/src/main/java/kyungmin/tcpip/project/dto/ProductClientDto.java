@@ -1,5 +1,9 @@
-package kyungmin.tcpip.dto;
+package kyungmin.tcpip.project.dto;
 
+
+/**
+ * 클라이언트 => 서버 DTO
+ */
 public class ProductClientDto {
 
   private int menuNum;

@@ -1,14 +1,12 @@
-package kyungmin.tcpip;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
+package kyungmin.tcpip.project.server;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import kyungmin.tcpip.dto.ProductClientDto;
-import kyungmin.tcpip.dto.ProductServerDto;
+import kyungmin.tcpip.project.client.ProductClient;
+import kyungmin.tcpip.project.domain.Product;
+import kyungmin.tcpip.project.dto.ProductClientDto;
+import kyungmin.tcpip.project.dto.ProductServerDto;
 import kyungmin.tcpip.project.exception.NoProductException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -92,30 +90,5 @@ public class ProductService {
   public List<Product> findProducts() {
     return productRepository.findAll();
   }
-
-  public void printMenu() {
-    ProductServerDto productServerDto = objectMapper.readValue(json, ProductServerDto.class);
-    String status = productServerDto.getStatus();
-    Product[] products = productServerDto.getProducts();
-
-    if (status.equals("fail")){
-      System.out.println("=".repeat(20)+"Warning!!!!"+"=".repeat(20));
-      System.out.println("방금 수행하신 명령에 오류가 있었기 때문에 기존 데이터를 종료합니다");
-      System.out.println("=".repeat(50));
-      System.out.println();
-      return;
-    }
-
-    System.out.println("-".repeat(50));
-    System.out.println("no\t\tname\t\t\t\t\t\t\t\tprice\t\t\t\tstock");
-    System.out.println("-".repeat(50));
-
-    for (Product product : products) {
-      System.out.println(product);
-    }
-    System.out.println("-".repeat(50));
-    System.out.println("메뉴: 1. Create | 2. Update | 3.Delete | 4.Exit");
-    System.out.print("선택 : ");
-
-  }
+  
 }
