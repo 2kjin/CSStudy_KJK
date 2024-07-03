@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import kyungmin.tcpip.project.server.ProductRepository;
 import kyungmin.tcpip.project.server.ProductService;
 import kyungmin.tcpip.project.domain.Product;
 import kyungmin.tcpip.project.dto.ProductClientDto;
@@ -15,13 +16,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductClient {
 
-
-  @Autowired
-  private static final ProductService productService = new ProductService();
-
   private static final ObjectMapper objectMapper = new ObjectMapper();
 
 
+  private static final ProductService productService = new ProductService(objectMapper , new ProductRepository());
 
   private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -113,13 +111,10 @@ public class ProductClient {
     }
     else{
       System.out.println("=".repeat(20)+"Warning!!!!"+"=".repeat(20));
-      System.out.println("\t\t\t\tstatus가 fail로 종료합니다....\t\t\t\t");
+      System.out.println("\t\t\t\t status가 fail로 종료합니다....\t\t\t\t");
       System.out.println("=".repeat(50));
       System.out.println();
     }
-
-
-
 
   }
 
