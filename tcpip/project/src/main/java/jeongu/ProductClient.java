@@ -2,53 +2,51 @@ package jeongu;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.net.ConnectException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
-import lombok.Data;
 
 public class ProductClient {
-
-  static Scanner scanner = new Scanner(System.in);
-  static final private String serverIp = "127.0.0.1";
-  static Socket socket = null;
+  private static final String SERVER_IP = "127.0.0.1";
+  private static final int SERVER_PORT = 8080;
   static ObjectMapper mapper = new ObjectMapper();
+  private static final Scanner scanner = new Scanner(System.in);
 
   public static void main(String[] args) {
+    new ProductClient().start();
+  }
 
-    BufferedReader br = null;
-    PrintWriter pw = null;
-    boolean quit = false;
+  public void start(){
+    Socket socket = null;
 
     try {
       // 서버 연결
-      socket = new Socket(serverIp, 8080);
+      socket = new Socket(SERVER_IP, SERVER_PORT);
+
 
       System.out.println("서버에 연결되었습니다.");
 
-      while (!quit) {
-
-        br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String responseJson = br.readLine();
+      while (true) {
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String responseJson = in.readLine();
 
         Response response = mapper.readValue(responseJson, Response.class);
 
         String status = response.getStatus();
         if (status.equals("fail")) {
-          System.out.println("잘못된 데이터를 받아왔습니다.");
+          System.out.println("예기치 못한 오류가 발생했습니다.");
+          break;
         }
+
         ArrayList<Product> arrayList = response.getData();
 
         productList(arrayList);
         showMenu();
 
-        Product product = new Product();
+        Product product;
 
         int menu = scanner.nextInt();
 
@@ -59,19 +57,19 @@ public class ProductClient {
         } else if (menu == 3) {
           product = deleteMenu();
         } else if (menu == 4) {
-          quit = true;
+          break;
         } else {
           System.out.println("잘못된 선택입니다.");
           continue;
         }
 
-        pw = new PrintWriter(socket.getOutputStream());
+        PrintWriter out = new PrintWriter(socket.getOutputStream());
 
         Request request = new Request(menu, product);
         String requestJson = mapper.writeValueAsString(request);
 
-        pw.println(requestJson);
-        pw.flush();
+        out.println(requestJson);
+        out.flush();
 
       }
 
@@ -89,18 +87,6 @@ public class ProductClient {
     }
 
   }
-
-//  @Data
-//  private static class Request{
-//    private int menu;
-//    private Product data;
-//
-//    public Request(int menu, Product data) {
-//      this.menu = menu;
-//      this.data = data;
-//    }
-//  }
-
 
   private static Product createMenu() {
     Product product = new Product();
