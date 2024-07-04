@@ -81,14 +81,17 @@ public class ProductServer {
 
           if (selectedMenu == 1){
             saveProduct(receivedProduct);
+            status = "success";
           } else if (selectedMenu == 2) {
-            updateProduct(receivedProduct);
+            status = updateProduct(receivedProduct);
           } else if (selectedMenu == 3) {
-            deleteProduct(receivedProduct);
+            status = deleteProduct(receivedProduct);
           } else if (selectedMenu == 4) {
             System.out.println("클라이언트가 연결을 끊었습니다.");
             break;
           } else {
+            System.out.println("클라이언트가 잘못된 요청을 하였습니다.");
+            status = "fail";
             continue;
           }
 
@@ -107,23 +110,26 @@ public class ProductServer {
       productList.add(product);
     }
 
-    private static void updateProduct(Product product) {
+    private static String updateProduct(Product product) {
       for (Product target : productList) {
         if (target.getNo() == product.getNo()) {
           target.setName(product.getName());
           target.setPrice(product.getPrice());
           target.setStock(product.getStock());
+          return "success";
         }
       }
+      return "fail";
     }
 
-    private static void deleteProduct(Product product) {
+    private static String deleteProduct(Product product) {
       for (Product target : productList) {
         if (target.getNo() == product.getNo()) {
           productList.remove(target);
-          break;
+          return "success";
         }
       }
+      return "fail";
     }
   }
 
